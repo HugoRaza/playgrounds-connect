@@ -1,0 +1,11 @@
+<h1>All playgrounds</h1>
+
+  <% @playgrounds.each do |playground| %>
+    <%= playground.name %>
+    <%= playground.address %>
+    <%= playground.rims_number %>
+    <hr>
+  <% end %>
+
+
+  <%= link_to 'Add a playground', new_playground_path %>
