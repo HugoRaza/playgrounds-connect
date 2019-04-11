@@ -19,15 +19,16 @@ cities = Array.new
 cities_not_found = Array.new
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath    = './db/NOM_VILLES.csv'
+filepath    = './db/TOP_CITIES.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
-  one_city = "#{row}"[(9..-4)]
+  one_city = "#{row}"[(0..-28)]
   if one_city.include?(' ')
   else
     cities << one_city
   end
 end
+
 
 cities.each do |city|
 
@@ -51,6 +52,7 @@ end
 
 cities_found = cities - cities_not_found
 
+puts "Cities have been filtered"
 
 
 cities_found.each do |city_found|
@@ -86,7 +88,6 @@ cities_found.each do |city_found|
      Playground.create(name: all_name[i], address: all_address[i], city: city_found)
      i +=1
   end
-
 
 end
 
