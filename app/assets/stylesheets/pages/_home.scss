@@ -1,1 +1,32 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Poiret+One|Special+Elite');
+
+
+#main-title {
+  font-size: 60px;
+  font-family: 'Special Elite', cursive;
+  // font-family: 'Poiret One', cursive;
+  // font-family: 'Passion One', cursive;
+}
+
+#subtitle {
+  font-size: 25px;
+  font-family: 'Poiret One', cursive;
+}
+
+.button-home{
+  padding: 10px;
+}
+
+.homepage-bloc {
+  height: 100vh;
+  text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("background-homepage.jpeg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.titles {
+  color: white;
+  width: 100%;
+}
