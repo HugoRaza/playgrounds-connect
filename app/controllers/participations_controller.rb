@@ -11,13 +11,3 @@ class ParticipationsController < ApplicationController
     params.require(:participation).permit(:start_date, :end_date, :status)
   end
 end
-
-
-  def display_participants
-    @playground = Playground.find(params[:id])
-    participations = Participation.where(playground: @playground)
-    participations.each do |participation|
-      @player = participation.user
-    end
-
-  end
