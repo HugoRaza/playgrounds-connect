@@ -6,6 +6,8 @@ class PlaygroundsController < ApplicationController
   def show
     @playground = Playground.find(params[:id])
     @user = current_user
+    @participation = Participation.new
+    @participation.playground = @playground
   end
 
   def new

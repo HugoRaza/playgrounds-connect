@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
   def create
+    @playground = Playground.find(params[:playground_id])
     @participation = Participation.new(participation_params)
-    @user = current_user
+    @participation.user = current_user
     # we need `restaurant_id` to asssociate review with corresponding restaurant
-    @participation.playground = Playground.find(params[:playground_id])
+    @participation.playground = @playground
     @participation.save
   end
 
