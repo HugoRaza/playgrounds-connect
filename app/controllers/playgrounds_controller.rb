@@ -4,6 +4,10 @@ class PlaygroundsController < ApplicationController
   end
 
   def show
+    @playground = Playground.find(params[:id])
+    @user = current_user
+    @participation = Participation.new
+    @participation.playground = @playground
   end
 
   def new
