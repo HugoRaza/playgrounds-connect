@@ -8,6 +8,7 @@ class PlaygroundsController < ApplicationController
     @user = current_user
     @participation = Participation.new
     @participation.playground = @playground
+    @participations = Participation.where(playground: @playground)
   end
 
   def new
@@ -22,7 +23,6 @@ class PlaygroundsController < ApplicationController
       render :new
     end
   end
-
 
   private
 

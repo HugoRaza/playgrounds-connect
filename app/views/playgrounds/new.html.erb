@@ -6,13 +6,15 @@
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <%= f.input :name,
-                  class: "form-controlform-text text-muted"%>
+                  class: "form-control form-text text-muted"%>
       <%= f.input :address,
-                  class: "form-controlform-text text-muted" %>
+                  class: "form-control form-text text-muted" %>
+      <%= f.input :city,
+                  class: "form-control form-text text-muted"%>
       <%= f.input :rims_number,
-                  class: "form-controlform-text text-muted" %>
+                  class: "form-control form-text text-muted" %>
       <%= f.input :playground_picture,
-                  class: "form-controlform-text text-muted" %>
+                  class: "form-control form-text text-muted" %>
 
       <%= f.button :submit, class: "btn btn-primary"  %>
     <% end %>

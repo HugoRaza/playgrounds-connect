@@ -3,14 +3,29 @@
 
 <br>
 
+ <%= @user.nickname %>
+<hr>
+
+<% @participations.each do |participation| %>
+  <%= participation.user.nickname  %>
+  <%= participation.start_date  %>
+  <%= participation.end_date  %>
+  <%= participation.status  %>
+  <hr>
+<% end %>
+
+<br>
+<br>
+<br>
+
 <%= simple_form_for [@playground, @participation] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <%= f.input :date,
+  <%= f.input :start_date,
               class: "form-controlform-text text-muted"%>
-  <%= f.input :duration,
-              class: "form-controlform-text text-muted" %>
+  <%= f.input :end_date,
+              class: "form-control form-text text-muted" %>
   <%= f.input :status,
-              class: "form-controlform-text text-muted" %>
+              class: "form-control form-text text-muted" %>
   <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>
