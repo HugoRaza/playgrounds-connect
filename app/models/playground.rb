@@ -7,10 +7,11 @@ class Playground < ApplicationRecord
 
   def self.search(term)
     if term
-      find_by(city: term.downcase)
+      where(city: term.downcase)
     else
       all
     end
+  end
 
   def current_participations_count
     participations.where(status: "ongoing").count
