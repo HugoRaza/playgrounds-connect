@@ -1,22 +1,29 @@
-<%= @playground.name %> -
-<%= @playground.address %>
+<div class="mb-3">
+  <%= @playground.name %> -
+  <%= @playground.address %>
+</div>
 
-<br>
+<hr />
 
- <%= @user.nickname %>
-<hr>
+<div class="col">
+  <div class="messagebox">
+    <% if @participations.present? %>
+      <% @participations.each do |participation| %>
+        <ul class="list-inline">
+          <li class="list-inline-item"><%= participation.user.nickname  %></li>
+          <li class="list-inline-item"><%= participation.start_date  %></li>
+          <li class="list-inline-item"><%= participation.end_date  %></li>
+          <li class="list-inline-item"><%= participation.status  %></li>
+        </ul>
+      <% end %>
 
-<% @participations.each do |participation| %>
-  <%= participation.user.nickname  %>
-  <%= participation.start_date  %>
-  <%= participation.end_date  %>
-  <%= participation.define_status  %>
-  <hr>
-<% end %>
+    <% else %>
+        <p>No participants yet</p>
+    <% end %>
+  </div>
+</div>
 
-<br>
-<br>
-<br>
+<hr />
 
 <%= simple_form_for [@playground, @participation] do |f| %>
   <%= f.error_notification %>

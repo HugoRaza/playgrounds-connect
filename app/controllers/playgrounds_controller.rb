@@ -7,8 +7,7 @@ class PlaygroundsController < ApplicationController
     @playground = Playground.find(params[:id])
     @user = current_user
     @participation = Participation.new
-    @participation.playground = @playground
-    @participations = Participation.where(playground: @playground)
+    @participations = @playground.participations.includes(:user).sort_by(&:start_date).reverse
   end
 
   def new

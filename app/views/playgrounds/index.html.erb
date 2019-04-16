@@ -5,6 +5,9 @@
     <%= playground.address %>
     <%= playground.rims_number %>,
     <%= playground.city %>
+    <% if playground.current_participations_count > 0 || playground.coming_participations_count > 0 %>
+      <%= render partial: "shared/nearby_participations", locals: {playground: playground} %>
+    <% end %>
     <%= link_to 'go', playground_path(playground) %>
     <hr>
   <% end %>
