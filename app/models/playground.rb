@@ -11,5 +11,12 @@ class Playground < ApplicationRecord
     else
       all
     end
+
+  def current_participations_count
+    participations.where(status: "ongoing").count
+  end
+
+  def coming_participations_count
+    participations.where("start_date > NOW() and start_date < (NOW() + INTERVAL '1 DAY')").count
   end
 end
