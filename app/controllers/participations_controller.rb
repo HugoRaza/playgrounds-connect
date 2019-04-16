@@ -17,11 +17,3 @@ class ParticipationsController < ApplicationController
 end
 
 
-  def display_participants
-    @playground = Playground.find(params[:id])
-    participations = Participation.where(playground: @playground)
-    participations.each do |participation|
-      @player = participation.user
-    end
-
-  end
