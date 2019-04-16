@@ -7,7 +7,7 @@ class Playground < ApplicationRecord
 
   def self.search(term)
     if term
-      where('city LIKE ?', "%#{term.downcase}%")
+      find_by(city: term.downcase)
     else
       all
     end
