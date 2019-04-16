@@ -3,9 +3,11 @@ class ParticipationsController < ApplicationController
     @playground = Playground.find(params[:playground_id])
     @participation = Participation.new(participation_params)
     @participation.user = current_user
-    # we need `restaurant_id` to asssociate review with corresponding restaurant
     @participation.playground = @playground
-    @participation.save
+    if @participation.save
+      flash[:notice] = "Participation registered"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
 
