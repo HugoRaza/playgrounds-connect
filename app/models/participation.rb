@@ -5,7 +5,7 @@ class Participation < ApplicationRecord
 
 
 
-    def define_status
+    def status
       if self.start_date > Time.now
         "coming"
       elsif self.end_date < Time.now
