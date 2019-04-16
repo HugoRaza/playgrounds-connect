@@ -5,6 +5,13 @@ class Playground < ApplicationRecord
   has_many :participations, dependent: :destroy
   validates :name, uniqueness: true
 
+  def self.search(term)
+    if term
+      find_by(city: term.downcase)
+    else
+      all
+    end
+
   def current_participations_count
     participations.where(status: "ongoing").count
   end
