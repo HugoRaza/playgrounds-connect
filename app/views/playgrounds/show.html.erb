@@ -10,7 +10,7 @@
   <%= participation.user.nickname  %>
   <%= participation.start_date  %>
   <%= participation.end_date  %>
-  <%= participation.status  %>
+  <%= participation.define_status  %>
   <hr>
 <% end %>
 
@@ -24,8 +24,6 @@
   <%= f.input :start_date,
               class: "form-controlform-text text-muted"%>
   <%= f.input :end_date,
-              class: "form-control form-text text-muted" %>
-  <%= f.input :status,
               class: "form-control form-text text-muted" %>
   <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>

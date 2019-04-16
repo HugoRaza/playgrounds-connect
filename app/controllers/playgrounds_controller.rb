@@ -30,4 +30,5 @@ class PlaygroundsController < ApplicationController
     params.require(:playground).permit(:name, :address, :rims_number, :playgound_picture)
   end
 
+
 end
