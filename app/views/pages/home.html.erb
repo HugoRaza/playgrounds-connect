@@ -5,9 +5,14 @@
     <h2 id="subtitle">Do not play alone!</h2>
 
     <div class="button-home">
-      <%= link_to 'Play!', playgrounds_path, class: "btn btn-lg btn-primary" %>
+        <%= form_tag(playgrounds_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term] %>
+          <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
+        <% end %>
     </div>
   </div>
 </div>
+
+
 
 

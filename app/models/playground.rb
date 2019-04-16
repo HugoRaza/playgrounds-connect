@@ -4,4 +4,12 @@ class Playground < ApplicationRecord
 
   has_many :participations, dependent: :destroy
   validates :name, uniqueness: true
+
+  def self.search(term)
+    if term
+      where('city LIKE ?', "%#{term.downcase}%")
+    else
+      all
+    end
+  end
 end

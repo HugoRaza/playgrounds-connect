@@ -1,6 +1,6 @@
 class PlaygroundsController < ApplicationController
   def index
-    @playgrounds = Playground.all
+    @playgrounds = Playground.search(params[:term])
   end
 
   def show
@@ -27,7 +27,7 @@ class PlaygroundsController < ApplicationController
   private
 
   def playground_params
-    params.require(:playground).permit(:name, :address, :rims_number, :playgound_picture)
+    params.require(:playground).permit(:name, :address, :rims_number, :playgound_picture, :term)
   end
 
 
