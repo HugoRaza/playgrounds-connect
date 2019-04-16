@@ -6,9 +6,7 @@ class User < ApplicationRecord
 
   has_many :participations
 
-  attr_writer :login
+validates :email, uniqueness: true
+validates :nickname, uniqueness: true
 
-  def login
-    @login || self.nickname || self.email
-  end
 end
