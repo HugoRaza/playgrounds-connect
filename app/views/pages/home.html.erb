@@ -5,13 +5,12 @@
     <h2 id="subtitle">Do not play alone!</h2>
 
     <%= form_tag(playgrounds_path, method: :get) do %>
-        <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]} %>
+        <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]}, {prompt: 'Select a city'} %>
         <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
     <% end %>
   </div>
 
 </div>
-
 
 
 
