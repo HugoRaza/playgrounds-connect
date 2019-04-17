@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Passion+One|Poiret+One|Special+Elite');
 
+.homepage-bloc {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("background-homepage.jpeg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+
+.titles {
+  position: center;
+  color: white;
+  select {
+    width: 30%;
+    height: 38px;
+  }
+}
 
 #main-title {
   font-size: 60px;
@@ -13,22 +32,6 @@
   font-family: 'Poiret One', cursive;
 }
 
-.button-home{
-  padding: 10px;
-  width: 50%;
-  margin: 0 auto;
-}
 
-.homepage-bloc {
-  height: 100vh;
-  text-align: center;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("background-homepage.jpeg");
-  background-size: cover;
-  display: flex;
-  align-items: center;
-}
 
-.titles {
-  color: white;
-  width: 100%;
-}
+

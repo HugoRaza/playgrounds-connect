@@ -4,17 +4,13 @@
 
     <h2 id="subtitle">Do not play alone!</h2>
 
-    <div class="button-home">
-        <%= form_tag(playgrounds_path, method: :get, class: 'input-group') do %>
-          <%= text_field_tag :term, params[:term], class: 'form-control', placeholder: 'Search for a city' %>
-          <span class="input-group-btn">
-          <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
-          </span>
-        <% end %>
-    </div>
+    <%= form_tag(playgrounds_path, method: :get) do %>
+        <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]} %>
+        <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
+    <% end %>
   </div>
-</div>
 
+</div>
 
 
 
