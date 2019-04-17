@@ -1,6 +1,6 @@
 class PlaygroundsController < ApplicationController
   def index
-    @playgrounds = Playground.search(params[:term])
+    @playgrounds = Playground.search(params[:city])
   end
 
   def show

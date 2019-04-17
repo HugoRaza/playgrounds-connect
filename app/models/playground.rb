@@ -5,9 +5,9 @@ class Playground < ApplicationRecord
   has_many :participations, dependent: :destroy
   validates :name, uniqueness: true
 
-  def self.search(term)
-    if term
-      where(city: term.downcase)
+  def self.search(city)
+    if city
+      where(city: city.join.downcase)
     else
       all
     end

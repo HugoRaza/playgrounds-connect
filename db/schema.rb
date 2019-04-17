@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_122729) do
+ActiveRecord::Schema.define(version: 2019_04_16_154944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "participations", force: :cascade do |t|
-    t.string "status"
     t.bigint "user_id"
     t.bigint "playground_id"
     t.datetime "created_at", null: false
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_04_16_122729) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "message"
+    t.string "status"
     t.index ["playground_id"], name: "index_participations_on_playground_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
