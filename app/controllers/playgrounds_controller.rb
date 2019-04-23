@@ -1,6 +1,9 @@
 class PlaygroundsController < ApplicationController
   def index
     @playgrounds = Playground.search(params[:city])
+    if @playgrounds.empty?
+      redirect_to new_playground_path, notice: "Be the first to add a Playground in #{params[:city][0]} "
+    end
   end
 
   def show

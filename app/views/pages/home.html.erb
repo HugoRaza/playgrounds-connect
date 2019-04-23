@@ -1,16 +1,36 @@
-<div class="homepage-bloc">
-  <div class="titles">
-    <h1 id="main-title">Playgroundz</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Playground - find your basketball mates</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
 
-    <h2 id="subtitle">Do not play alone!</h2>
+  <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="homepage-bloc">
+    <div class="titles">
+      <h1 id="main-title">Playgroundz</h1>
 
-    <%= form_tag(playgrounds_path, method: :get) do %>
-        <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]}, {prompt: 'Select a city'} %>
-        <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
-    <% end %>
+      <h2 id="subtitle">Do not play alone!</h2>
+
+      <%= form_tag(playgrounds_path, method: :get) do %>
+          <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]}, {prompt: 'Select a city'} %>
+          <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
   </div>
 
-</div>
+
+  </body>
+</html>
+
+
 
 
 

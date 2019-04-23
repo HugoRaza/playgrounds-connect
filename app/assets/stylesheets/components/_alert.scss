@@ -1,6 +1,36 @@
+/* -------------------------------------
+ * Your CSS code for flash notices and alerts
+* ------------------------------------- */
+
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.alert-info {
+  background: $green;
+}
+.alert-warning {
+  background: $red;
+}
+
+.alert-danger {
+  color: #EE5F5B;
+  background: none;
+}
+
+.icon_style{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor:pointer;
+}
+
+.toaster {
+  background-color: #23B5D3;
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
