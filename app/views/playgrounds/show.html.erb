@@ -11,8 +11,8 @@
       <% @participations.each do |participation| %>
         <ul class="list-inline">
           <li class="list-inline-item"><%= participation.user.nickname  %></li>
-          <li class="list-inline-item"><%= participation.start_date  %></li>
-          <li class="list-inline-item"><%= participation.end_date  %></li>
+          <li class="list-inline-item">Start on :<%= participation.start_date.strftime('%m/%d/%Y %H:%M:%S')  %></li>
+          <li class="list-inline-item">End on :<%= participation.end_date.strftime('%m/%d/%Y %H:%M:%S')  %></li>
           <li class="list-inline-item"><%= participation.status  %></li>
         </ul>
       <% end %>
@@ -25,14 +25,18 @@
 
 <hr />
 
-<%= Time.now %>
+<%= Time.now.strftime('%m/%d/%Y %H:%M:%S') %>
 
 <%= simple_form_for [@playground, @participation] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :start_date,
+              minute_step: 30,
               class: "form-control form-text text-muted"%>
   <%= f.input :end_date,
+              minute_step: 30,
               class: "form-control form-text text-muted" %>
   <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>
+
+

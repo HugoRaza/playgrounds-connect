@@ -1,16 +1,37 @@
 <h1>All playgrounds</h1>
 
-  <% @playgrounds.each do |playground| %>
-    <%= playground.name %>
-    <%= playground.address %>
-    <%= playground.rims_number %>,
-    <%= playground.city %>
-    <% if playground.current_participations_count > 0 || playground.coming_participations_count > 0 %>
-      <%= render partial: "shared/nearby_participations", locals: {playground: playground} %>
+<div class="grid-wrapper-all">
+
+  <div class="grid-wrapper-playgrounds">
+    <% @playgrounds.each do |playground| %>
+      <div class="card-playground">
+        <div class="playground-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520640292646-2c3753cf3ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80)">
+        </div>
+        <div class="playground-info">
+          <div class="title-address">
+            <div class="playground-name">
+              <%= playground.name %>
+            </div>
+            <div class="playground-address">
+              <%= playground.address %>
+            </div>
+          </div>
+          <div class="player-participation">
+            <%= render partial: "shared/nearby_participations", locals: {playground: playground} %>
+          </div>
+          <div class="join-playground">
+            <%= link_to 'join', playground_path(playground) %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    <%= link_to 'go', playground_path(playground) %>
-    <hr>
-  <% end %>
+    <%= link_to 'Add a playground', new_playground_path %>
+  </div>
+
+  <div class="map-playground">
+    <img src="https://cdn-images-1.medium.com/max/2000/0*yPSQlTHRvLaIVBcG.jpg" alt="">
+  </div>
+
+</div>
 
 
-  <%= link_to 'Add a playground', new_playground_path %>

@@ -1,0 +1,95 @@
+.grid-wrapper-all {
+  display: flex;
+}
+
+.map-playground {
+  width: 30%;
+  margin-right: 10px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.grid-wrapper-playgrounds {
+  width: 70%;
+  margin: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.card-playground{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.playground-image{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+}
+
+.playground-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px;
+  min-height: 30%;
+  .title-address{
+    width: 50%;
+  }
+    .playground-name {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .playground-address{
+      font-size: 11px;
+      opacity: .7;
+      margin: 0;
+    }
+}
+
+.player-participation{
+  width: 30%;
+  padding: 0 5px;
+  .badge-primary{
+    font-size: 10px;
+  }
+  .badge-secondary{
+    font-size: 10px;
+  }
+}
+
+.join-playground{
+    border: 1px solid #D94C3A;
+    background-color: #D94C3ADD;
+    border-radius: 50%;
+    font-size: 15px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    &:hover{
+      background-color: #D94C3A;
+      border: 1px solid #D94C3ADD;
+    }
+    a{
+      color: white;
+      font-weight: 300;
+      &:hover{
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+}
+
+.badge-primary {
+
+}
