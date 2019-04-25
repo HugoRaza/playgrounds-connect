@@ -20,6 +20,7 @@
 }
 
 .card-playground{
+  position: relative;
   width: 100%;
   height: 200px;
   display: flex;
@@ -46,6 +47,9 @@
       font-size: 14px;
       font-weight: bold;
       margin: 0;
+      position: absolute;
+      top: 10px;
+      color: white;
     }
     .playground-address{
       font-size: 11px;
@@ -66,6 +70,9 @@
 }
 
 .join-playground{
+    position: absolute;
+    top: 10px;
+    right: 10px;
     border: 1px solid #D94C3A;
     background-color: #D94C3ADD;
     border-radius: 50%;
@@ -90,6 +97,4 @@
     }
 }
 
-.badge-primary {
 
-}
