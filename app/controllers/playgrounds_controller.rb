@@ -4,6 +4,13 @@ class PlaygroundsController < ApplicationController
     if @playgrounds.empty?
       redirect_to new_playground_path, notice: "Be the first to add a Playground in #{params[:city][0]} "
     end
+     @markers = @playgrounds.map do |playground|
+      {
+        lat: playground.latitude,
+        lng: playground.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { playground: playground })
+      }
+      end
   end
 
   def show
