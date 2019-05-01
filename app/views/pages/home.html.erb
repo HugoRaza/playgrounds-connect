@@ -7,11 +7,17 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6/css/select2.min.css" rel="stylesheet" />
+
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
+
+
+
     <div class="homepage-bloc">
     <div class="titles">
       <h1 id="main-title">Playgroundz</h1>
@@ -19,14 +25,14 @@
       <h2 id="subtitle">Do not play alone!</h2>
 
       <%= form_tag(playgrounds_path, method: :get) do %>
-          <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]}, {prompt: 'Select a city'} %>
+          <%= select :city, params[:city], @cities.each.map {|name| [name.capitalize]}, {prompt: 'Select a city'}, class: "select2" %>
           <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
       <% end %>
     </div>
 
   </div>
-
-
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
 
