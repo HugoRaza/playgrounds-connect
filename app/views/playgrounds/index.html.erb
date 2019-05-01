@@ -28,9 +28,13 @@
     <%= link_to 'Add a playground', new_playground_path %>
   </div>
 
-  <div class="map-playground">
-    <img src="https://cdn-images-1.medium.com/max/2000/0*yPSQlTHRvLaIVBcG.jpg" alt="">
-  </div>
+  <div
+    id="map"
+    style="width: 50%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
 </div>
 
