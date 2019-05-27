@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Poiret+One|Special+Elite');
+
 .grid-wrapper-all {
   display: flex;
 }
@@ -74,32 +76,16 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    border: 1px solid #D94C3A;
-    background-color: #D94C3ADD;
-    border-radius: 50%;
-    font-size: 15px;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    &:hover{
-      background-color: #D94C3A;
-      border: 1px solid #D94C3ADD;
-    }
+    font-family: 'Special Elite', cursive;
     a{
       color: white;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
+      color: #ff6337;
       &:hover{
         font-weight: bold;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
+        color: #fd5f00;
       }
     }
 }
