@@ -6,7 +6,15 @@ class Playground < ApplicationRecord
   validates :name, uniqueness: true
 
   def self.search(city)
-    where(city: city.join.downcase)
+    if city.nil?
+      Playground.all
+    else
+      if city.respond_to?(:to_str)
+        where(city: city.downcase)
+      else
+        where(city: city.join.downcase)
+      end
+    end
   end
 
   def current_participations_count

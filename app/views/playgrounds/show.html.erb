@@ -47,6 +47,9 @@
 
 </div>
 
+<div class="back-link">
+  <%= link_to "Back to #{@playground.city}", playgrounds_path(params.merge(city: @playground.city).permit(:city)) %>
+</div>
 
 
 

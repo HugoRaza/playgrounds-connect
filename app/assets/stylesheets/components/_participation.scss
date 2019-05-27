@@ -32,3 +32,16 @@
     color: #fd5f00;
   }
 }
+
+.back-link {
+  padding: 10px;
+  a{
+    font-size: 20px;
+    font-family: 'Special Elite', cursive;
+    color: #18191BBB;
+    &:hover{
+      text-decoration: none;
+      color: #2D2D2F;
+    }
+  }
+}
