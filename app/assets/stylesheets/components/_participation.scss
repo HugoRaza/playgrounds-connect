@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Poiret+One|Special+Elite');
+
+.playground-title {
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.playground-join {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+
+.date-form {
+  width: 50%;
+  margin: 0 auto;
+  span {
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
+    color: #fd5f00;
+  }
+}
+
+.playground-players {
+    span {
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
+    color: #fd5f00;
+  }
+}
