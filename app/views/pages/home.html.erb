@@ -26,7 +26,7 @@
       <h2 id="subtitle">Do not play alone!</h2>
 
       <%= form_tag(playgrounds_path, method: :get) do %>
-          <%= select :city, params[:city], Playground.pluck(:city).uniq, {prompt: 'Select a city'}, class: "select2" %>
+          <%= select :city, params[:city], Playground.pluck(:city).uniq.compact.sort.map {|city| city.capitalize}, {prompt: 'Select a city'}, class: "select2" %>
           <%= submit_tag 'Play', city: nil, class: "btn btn-primary" %>
       <% end %>
     </div>
